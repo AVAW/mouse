@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 
 services:
 ###> doctrine/doctrine-bundle ###
@@ -36,9 +36,15 @@ services:
       - .:/application
 
   node:
-    image: node:14.18.2-alpine
+    build: docker/node
+    user: 'node'
+    environment:
+      - NODE_ENV=dev
     container_name: '${APP_NAME}-node'
     working_dir: /application
+    expose:
+      - "8081"
+    command: yarn run watch
     volumes:
       - .:/application
 
