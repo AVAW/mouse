@@ -17,11 +17,12 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-
             <a class="navbar-item">
                 Documentation
             </a>
+        </div>
 
+        <div class="navbar-end">
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
                     {{ app.request.locale|upper }}
@@ -31,7 +32,7 @@
                         {% for locale in locales %}
                             <a href="{{ path(app.request.attributes.get("_route"), app.request.attributes.get('_route_params')|merge({"_locale": locale })) }}"
                                class="navbar-item {{ app.request.locale == locale ? 'is-active' : '' }}"
-                            >{{ ('locales.' ~ locale)|trans|upper }}</a>
+                            >{{ ('locales.' ~ locale)|trans|capitalize }}</a>
                         {% endfor %}
                     {% endif %}
                     <hr class="navbar-divider">
@@ -47,10 +48,6 @@
                     </a>
                 </div>
             </div>
-
-        </div>
-
-        <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
                     <a class="button is-primary">
