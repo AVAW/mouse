@@ -1,0 +1,9 @@
+# Do not add this translation in other translation files, just add all languages to this list.
+locales:
+  pl: Polski
+  en: English
+
+language:
+  pl: Polish
+  en: English
+

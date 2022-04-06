@@ -24,13 +24,17 @@
 
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                    More
+                    {{ app.request.locale|upper }}
                 </a>
-
                 <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                        About
-                    </a>
+                    {% if app.request.get('_route_params') is iterable %}
+                        {% for locale in locales %}
+                            <a href="{{ path(app.request.attributes.get("_route"), app.request.attributes.get('_route_params')|merge({"_locale": locale })) }}"
+                               class="navbar-item {{ app.request.locale == locale ? 'is-active' : '' }}"
+                            >{{ ('locales.' ~ locale)|trans|upper }}</a>
+                        {% endfor %}
+                    {% endif %}
+                    <hr class="navbar-divider">
                     <a class="navbar-item">
                         Jobs
                     </a>
