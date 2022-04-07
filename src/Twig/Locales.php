@@ -25,5 +25,4 @@ class Locales extends AbstractExtension implements GlobalsInterface
     {
         return 'Locales_extension';
     }
-
 }
