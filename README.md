@@ -1,3 +1,6 @@
+# Deploy
 
-
-`sf doctrine:fixtures:load --group Prod`
+```
+sf doctrine:migrations:migrate
+sf doctrine:fixtures:load --group Prod
+```
