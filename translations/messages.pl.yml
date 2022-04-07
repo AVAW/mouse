@@ -7,6 +7,7 @@ language:
   pl: Polish
   en: English
 
+# menu
 ladies: panie
 gentlemen: panowie
 clubs: kluby
@@ -16,3 +17,6 @@ bdms: bdms
 striptease: striptiz
 shows/Phone sex: pokazy/Sex telefon
 job offers: oferty
+  
+add advertisement: Dodaj anons
+login: Zaloguj
