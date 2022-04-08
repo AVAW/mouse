@@ -44,6 +44,11 @@
             <a class="navbar-item">
                 {{ 'job offers'|trans|capitalize }}
             </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="navbar-item">
+                    {{ 'admin'|trans|capitalize }}
+                </a>
+            {% endif %}
         </div>
 
         <div class="navbar-end">
@@ -71,11 +76,17 @@
             <div class="navbar-item">
                 <div class="buttons">
                     <a class="button is-primary">
-                        <strong>{{ 'add advertisement'|trans }}</strong>
+                        <strong>{{ 'add advertisement'|trans|capitalize }}</strong>
                     </a>
-                    <a class="button is-light">
-                        {{ 'login'|trans }}
-                    </a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a href="{{ path('app_logout') }}" class="button is-light">
+                            {{ 'logout'|trans|capitalize }}
+                        </a>
+                    {% else %}
+                        <a href="{{ path('app_login') }}" class="button is-light">
+                            {{ 'login'|trans|capitalize }}
+                        </a>
+                    {% endif %}
                 </div>
             </div>
         </div>

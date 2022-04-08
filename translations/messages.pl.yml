@@ -17,6 +17,8 @@ bdms: bdms
 striptease: striptiz
 shows/Phone sex: pokazy/Sex telefon
 job offers: oferty
+admin: admin
   
-add advertisement: Dodaj anons
-login: Zaloguj
+add advertisement: dodaj anons
+login: zaloguj
+logout: wyloguj
