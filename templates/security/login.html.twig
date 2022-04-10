@@ -27,9 +27,10 @@
 
                         <div class="field">
                             <p class="control has-icons-left has-icons-right">
-                                <input type="text" name="login"
+                                <input type="text"
+                                       id="username"
+                                       name="_username"
                                        value="{{ last_username }}"
-                                       id="inputLogin"
                                        class="input"
                                        placeholder="{{ 'user.login'|trans|capitalize }}"
                                        required
@@ -44,8 +45,8 @@
                         <div class="field">
                             <p class="control has-icons-left">
                                 <input type="password"
-                                       name="password"
-                                       id="inputPassword"
+                                       id="password"
+                                       name="_password"
                                        class="input"
                                        placeholder="{{ 'user.password'|trans|capitalize }}"
                                        required
