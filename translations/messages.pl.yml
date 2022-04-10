@@ -58,3 +58,7 @@ email-content:
     link expire: Link wygaśnie do
 
 cheers: Pozdrawiam
+
+error:
+  404: Nie można znaleść strony. Sprawdź, czy nie ma błędów w pisowni lub %link_start%wróć do strony głównej%link_end%.
+  500: Błąd serwera.

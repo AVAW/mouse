@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="section">
+                <h1 class="is-size-1">404</h1>
+                <p>
+                    {{ 'error.404'|trans({
+                        '%link_start%': '<a href="' ~ path('app_home') ~ '">',
+                        '%link_end%': '</a>'
+                    })|raw }}
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

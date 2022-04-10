@@ -49,3 +49,7 @@ email-content:
     link expire: This link will expire in
 
 cheers: Cheers
+
+error:
+  404: The requested page couldn't be located. Checkout for any URL misspelling or %link_start%return to the homepage%link_end%.
+  500: Server error.
