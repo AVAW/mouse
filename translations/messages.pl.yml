@@ -37,7 +37,7 @@ security:
   remember: Zapamiętaj mnie
   forgot password: Zapomniałeś hasła?
   already have an account: Masz już konto?
-  regulations: Akceptuję %link_start%Regulamin witryny, Politykę prywatności i Politykę Cookie%link_end%
+  regulations: Akceptuję %link_start%Regulamin witryny%link_end%, Politykę prywatności i Politykę Cookie
   set your new password: Ustaw nowe hasło
   reset password: Zresetuj hasło
   send password reset email: Wyślij email o zresetowanie hasła

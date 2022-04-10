@@ -28,7 +28,7 @@ security:
   remember: Remember me
   forgot password: Forgot password?
   already have an account: Already have an account?
-  regulations: I accept the %link_start%Terms and Conditions of Use, Privace policy and Cookie policy%link_end%
+  regulations: I accept the %link_start%Terms and Conditions of Use%link_end%, Privace policy and Cookie policy
   set your new password: Set your new password
   reset password: Reset password
   send password reset email: Send password reset email
