@@ -19,6 +19,42 @@ shows/Phone sex: pokazy/Sex telefon
 job offers: oferty
 admin: admin
   
-add advertisement: dodaj anons
-login: zaloguj
-logout: wyloguj
+add advertisement: Dodaj anons
+
+user:
+  login: Login
+  email: Email
+  password: Hasło
+
+security:
+  log in: Zaloguj
+  sign up: Załóż konto
+  logout: Wyloguj
+  success:
+    account created: Konto zostało utworzone. Przejdź do swojego maila i zweryfikuj e-mail.
+    your email address has been verified: Mail został zweryfikowany.
+    password reseated: Twoje hasło zostało zresetowane. Zaloguj się.
+  remember: Zapamiętaj mnie
+  forgot password: Zapomniałeś hasła?
+  already have an account: Masz już konto?
+  regulations: Akceptuję %link_start%Regulamin witryny, Politykę prywatności i Politykę Cookie%link_end%
+  set your new password: Ustaw nowe hasło
+  reset password: Zresetuj hasło
+  send password reset email: Wyślij email o zresetowanie hasła
+  enter your email address to reset your password: Podaj swojego e-maila, a wyślemy <br> Ci link do zresetowania hasła.
+  after password reset email send: Jeśli konto o podanym e-mailu istnieje, to mail zawierający link do potwierdzenia 
+    został już wysłany. Użyj go aby zresetować hasło. Link wygaśnie do
+  after password reset if dont get email: Jeśli nie otrzymasz maila proszę sprawdź folder spam lub %link_start%spróbuj ponownie%link_end%.
+
+email-content:
+  register:
+    hi: Witaj! Proszę potwierdź swój email!
+    please confirm: 'Proszę potwierdź swój adres email klikając w następujnący link:'
+    confirm my Email: Potwierdź mój email
+    link expire: Link wygaśnie do
+  reset password:
+    hi: Witaj
+    to reset your password: Aby zresetować hasło, proszę kliknij w link
+    link expire: Link wygaśnie do
+
+cheers: Pozdrawiam

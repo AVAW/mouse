@@ -48,6 +48,13 @@ services:
     volumes:
       - .:/application
 
+###> symfony/mailer ###
+  mailer:
+    image: schickling/mailcatcher
+    container_name: '${APP_NAME}-mailer'
+    ports: ["1025", "1080"]
+###< symfony/mailer ###
+
 volumes:
 ###> doctrine/doctrine-bundle ###
   db-data:

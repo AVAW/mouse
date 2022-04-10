@@ -1,6 +1,6 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{ path('app_home') }}">
+        <a class="navbar-item is-unselectable" href="{{ path('app_home') }}">
             <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
         </a>
 
@@ -83,8 +83,11 @@
                             {{ 'logout'|trans|capitalize }}
                         </a>
                     {% else %}
+                        <a href="{{ path('app_register') }}" class="button is-light">
+                            {{ 'security.sign up'|trans|capitalize }}
+                        </a>
                         <a href="{{ path('app_login') }}" class="button is-light">
-                            {{ 'login'|trans|capitalize }}
+                            {{ 'security.log in'|trans|capitalize }}
                         </a>
                     {% endif %}
                 </div>

@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon"/>
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -15,7 +14,39 @@
     </head>
     <body>
         {% include 'navbar.html.twig' %}
+
+        {% set errors = app.flashes('error') %}
+        {% if errors is not empty %}
+            <div class="notification has-background-danger has-text-white msg-list" style="margin-bottom: 0; border-radius: 0">
+                <button class="delete"></button>
+                <div class="container">
+                    <div class="content">
+                        <ol class="" style="margin-bottom: 16px">
+                            {% for error in errors %}
+                                <li>{{ error }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% set messages = app.flashes('success') %}
+        {% if messages is not empty %}
+            <div class="notification has-background-success has-text-white msg-list" style="margin-bottom: 0; border-radius: 0">
+                <div class="container">
+                    <div class="content">
+                        <ol class="" style="margin-bottom: 16px">
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
         {% block body %}{% endblock %}
+
         {% include 'footer.html.twig' %}
     </body>
 </html>

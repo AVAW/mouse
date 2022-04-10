@@ -1,0 +1,11 @@
+<h1>{{ 'email-content.register.hi'|trans|capitalize }}</h1>
+
+<p>
+    {{ 'email-content.register.please confirm'|trans|capitalize }}<br><br>
+    <a href="{{ signedUrl }}">{{ 'email-content.register.confirm my Email'|trans|capitalize }}</a>.
+    {{ 'email-content.register.link expire'|trans|capitalize }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+</p>
+
+<p>
+    {{ 'cheers'|trans|capitalize }}!
+</p>

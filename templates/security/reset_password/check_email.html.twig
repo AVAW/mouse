@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="content">
+                        <p>
+                            {{ 'security.after password reset email send'|trans }}
+                            {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+                        </p>
+                        <p>
+                            {{ 'security.after password reset if dont get email'|trans({
+                                '%link_start%': '<a href="' ~ path('app_forgot_password_request') ~ '">',
+                                '%link_end%': '</a>'
+                            })|raw }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
