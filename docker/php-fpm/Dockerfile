@@ -13,7 +13,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2-dev \
     libzip-dev \
     librabbitmq-dev \
-    libssh-dev
+    libssh-dev \
+    libpng-dev \
+    libfreetype6-dev
+
+RUN docker-php-ext-configure gd \
+    --with-freetype
 
 RUN docker-php-ext-install \
     zip \
@@ -21,7 +26,8 @@ RUN docker-php-ext-install \
     opcache \
     bcmath \
     sockets \
-    pdo pdo_mysql
+    pdo pdo_mysql \
+    gd
 
 RUN pecl install \
     apcu \

@@ -3,13 +3,17 @@
 namespace App\Form\Security;
 
 use App\Entity\User;
+use App\Validator\Captcha;
+use App\Validator\UniqueField;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -25,8 +29,11 @@ class RegistrationFormType extends AbstractType
                     new NotBlank(),
                     new Length([
                         'min' => 3,
-                        'minMessage' => 'Your login has to be at least {{ limit }} characters',
                         'max' => 50,
+                    ]),
+                    new UniqueField([
+                        'entityClass' => User::class,
+                        'field' => 'login',
                     ]),
                 ],
                 'attr' => [
@@ -38,6 +45,13 @@ class RegistrationFormType extends AbstractType
                 'label' => 'email',
                 'attr' => [
                     'placeholder' => 'user.email',
+                ],
+                'constraints' => [
+                    new Email(),
+                    new UniqueField([
+                        'entityClass' => User::class,
+                        'field' => 'email',
+                    ])
                 ],
                 'required' => true,
             ])
@@ -62,13 +76,24 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('captcha', TextType::class, [
+                'label' => 'security.captcha',
+                'attr' => [
+                    'placeholder' => 'security.captcha.enter result',
+                ],
+                'constraints' => [
+                    new Captcha(),
+                ],
+                'required' => true,
+            ])
+            ->add('captchaId', HiddenType::class, [
+                'required' => true,
+            ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'label' => 'agree terms',
                 'constraints' => [
-                    new IsTrue([
-                        'message' => 'You should agree to our terms.',
-                    ]),
+                    new IsTrue(),
                 ],
             ])
         ;
@@ -77,7 +102,6 @@ class RegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => User::class,
         ]);
     }
 }

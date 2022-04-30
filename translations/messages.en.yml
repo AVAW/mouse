@@ -28,6 +28,10 @@ security:
   remember: Remember me
   forgot password: Forgot password?
   already have an account: Already have an account?
+  captcha:
+    confirm: Confirm that you are not a robot
+    enter result: Enter the result of the equation shown in the picture
+    error: Incorrect result of the equation shown in the picture has been entered
   regulations: I accept the %link_start%Terms and Conditions of Use%link_end%, Privace policy and Cookie policy
   set your new password: Set your new password
   reset password: Reset password
@@ -53,3 +57,6 @@ cheers: Cheers
 error:
   404: The requested page couldn't be located. Checkout for any URL misspelling or %link_start%return to the homepage%link_end%.
   500: Server error.
+
+validator:
+  uniqueField: This value is already used.

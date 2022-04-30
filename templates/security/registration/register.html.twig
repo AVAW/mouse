@@ -8,7 +8,7 @@
 
             <div class="columns">
                 <div class="column is-3 is-offset-3">
-{#                    <img src="" alt="Register">#}
+                    {#                    <img src="" alt="Register"> #}
                 </div>
 
                 <div class="column is-one-quarter is-offset-0">
@@ -93,6 +93,30 @@
                         </p>
                     </div>
 
+                    <div class="field">
+                        <lable>{{ 'security.captcha.confirm'|trans }}</lable>
+                        <img src="{{ path('app_captcha') }}?{{ captcha.identifier }}" alt="Captcha">
+                        <p class="control has-icons-left">
+                            {{ form_widget(registrationForm.captcha, {
+                                attr: {
+                                    class: 'input',
+                                },
+                                value: ''
+                            }) }}
+                            {{ form_widget(registrationForm.captchaId, {
+                                value: captcha.identifier
+                            }) }}
+                            <span class="icon is-small is-left">
+                                <i class="fa-solid fa-circle-plus"></i>
+                            </span>
+                        </p>
+                        <p class="help is-danger">
+                            {% for error in registrationForm.captcha.vars.errors %}
+                                {{ error.message }}
+                            {% endfor %}
+                        </p>
+                    </div>
+
                     <div class="field is-unselectable">
                         <label>
                             {{ 'security.regulations'|trans({
@@ -119,13 +143,4 @@
             </div>
         </div>
     </section>
-{#    <h1>{{ 'sign up'|trans|capitalize }}</h1>#}
-
-{#    {{ form_start(registrationForm) }}#}
-{#        {{ form_row(registrationForm.email) }}#}
-{#        {{ form_row(registrationForm.plainPassword) }}#}
-{#        {{ form_row(registrationForm.agreeTerms) }}#}
-
-{#        <button type="submit" class="btn">Register</button>#}
-{#    {{ form_end(registrationForm) }}#}
 {% endblock %}

@@ -37,6 +37,10 @@ security:
   remember: Zapamiętaj mnie
   forgot password: Zapomniałeś hasła?
   already have an account: Masz już konto?
+  captcha:
+    confirm: Potwiedż, że nie jesteś robotem
+    enter result: Wprowadź wynik równania z obrazka
+    error: Wprowadzono niepoprawny wynik równania z obrazka
   regulations: Akceptuję %link_start%Regulamin witryny%link_end%, Politykę prywatności i Politykę Cookie
   set your new password: Ustaw nowe hasło
   reset password: Zresetuj hasło
@@ -62,3 +66,6 @@ cheers: Pozdrawiam
 error:
   404: Nie można znaleść strony. Sprawdź, czy nie ma błędów w pisowni lub %link_start%wróć do strony głównej%link_end%.
   500: Błąd serwera.
+
+validator:
+  uniqueField: Ta wartość jest już używana.
