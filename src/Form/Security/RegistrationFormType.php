@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\GroupSequence;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -82,7 +83,9 @@ class RegistrationFormType extends AbstractType
                     'placeholder' => 'security.captcha.enter result',
                 ],
                 'constraints' => [
-                    new Captcha(),
+                    new Captcha([
+                        'groups' => 'Captcha',
+                    ]),
                 ],
                 'required' => true,
             ])
@@ -102,6 +105,7 @@ class RegistrationFormType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
+            'validation_groups' => new GroupSequence(['Captcha', 'Default']),
         ]);
     }
 }
