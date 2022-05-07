@@ -46,7 +46,7 @@
                         <p class="control has-icons-left ">
                             {{ form_widget(resetForm.plainPassword.first, {
                                 attr: {
-                                    class: 'input',
+                                    class: 'input' ~ (resetForm.plainPassword.first.vars.errors|length > 0 ? ' is-danger'),
                                 },
                             }) }}
                             <span class="icon is-small is-left">
@@ -64,7 +64,7 @@
                         <p class="control has-icons-left ">
                             {{ form_widget(resetForm.plainPassword.second, {
                                 attr: {
-                                    class: 'input',
+                                    class: 'input' ~ (resetForm.plainPassword.second.vars.errors|length > 0 ? ' is-danger'),
                                 },
                             }) }}
                             <span class="icon is-small is-left">

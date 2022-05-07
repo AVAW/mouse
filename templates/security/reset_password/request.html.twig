@@ -46,7 +46,7 @@
                         <p class="control has-icons-left ">
                             {{ form_widget(requestForm.email, {
                                 attr: {
-                                    class: 'input',
+                                    class: 'input' ~ (requestForm.email.vars.errors|length > 0 ? ' is-danger'),
                                 },
                             }) }}
                             <span class="icon is-small is-left">
