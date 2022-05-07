@@ -5,6 +5,9 @@ WORKDIR /application
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
 
+RUN ln -snf /usr/share/zoneinfo/Europe/Warsaw /etc/localtime
+RUN echo Europe/Warsaw > /etc/timezone
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     vim \
@@ -45,6 +48,3 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 RUN echo 'alias sf="bin/console"' >> ~/.bashrc
 
 COPY php-ini-overrides.ini /usr/local/etc/php/conf.d/php-ini-overrides.ini
-
-## PHP-FPM packages need a nudge to make them docker-friendly
-#COPY overrides.conf /etc/php/7.3/fpm/pool.d/z-overrides.conf
