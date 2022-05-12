@@ -2,7 +2,32 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 @import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~bulma/bulma.sass';
 
 body {
     background-color: white;
+}
+
+.anons-step {
+    .is-active {
+        .index {
+            background-color: $primary;
+            color: $white-bis;
+        }
+
+        color: $primary;
+    }
+
+    .index {
+        display: block;
+        margin: 0 auto 15px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        background-color: $grey-lighter;
+        color: $grey-dark;
+        font-size: 14px;
+        font-weight: 700;
+    }
 }

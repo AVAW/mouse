@@ -2,6 +2,7 @@
 ladies: ladies
 gentlemen: gentlemen
 clubs: clubs
+clubs and agencies: Clubs and agencies
 couples: couples
 massage: massage
 bdms: bdms
@@ -9,8 +10,6 @@ striptease: striptease
 shows/Phone sex: shows/Phone sex
 job offers: job offers
 admin: admin
-
-add advertisement: Add advertisement
 
 user:
   login: Login
@@ -60,3 +59,16 @@ error:
 
 validator:
   uniqueField: This value is already used.
+
+anons:
+  add advertisement: Add advertisement
+  step:
+    step: Step
+    advertisement: Advertisement
+    advert details: Advert details
+    add photos: Add photos
+    confirmation and payment: Confirmation and payment
+    conclusion: Conclusion
+  choose a category: Choose a category
+  advertisement - basic information: Advertisement - basic information
+  basic information: Basic information

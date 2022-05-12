@@ -11,6 +11,7 @@ language:
 ladies: panie
 gentlemen: panowie
 clubs: kluby
+clubs and agencies: Kluby i agencje
 couples: pary
 massage: masaż
 bdms: bdms
@@ -18,8 +19,6 @@ striptease: striptiz
 shows/Phone sex: pokazy/Sex telefon
 job offers: oferty
 admin: admin
-  
-add advertisement: Dodaj anons
 
 user:
   login: Login
@@ -69,3 +68,16 @@ error:
 
 validator:
   uniqueField: Ta wartość jest już używana.
+
+anons:
+  add advertisement: Dodaj anons
+  step:
+    step: Krok
+    advertisement: Ogłoszenie
+    advert details: Szczegóły ogłoszenia
+    add photos: Dodaj zdjęcia
+    confirmation and payment: Potwierdzenie i płatność
+    conclusion: Zakończenie
+  choose a category: Wybierz kategorię
+  advertisement - basic information: Ogłoszenie - informacje podstawowe
+  basic information: Informacje podstawowe

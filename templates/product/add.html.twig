@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'anons.add advertisement'|trans }}{% endblock %}
+
+{% block body %}
+    <section class="section has-background-light">
+        <div class="container">
+            <div class="columns is-centered">
+                <h1 class="is-size-2">{{ 'anons.add advertisement'|trans }}</h1>
+            </div>
+            <div class="columns">
+                <div class="column is-10 is-offset-1">
+                    <div class="columns anons-step has-text-centered">
+                        <div class="column is-active">
+                            <div class="index">1</div>
+                            <p class="is-size-7">{{ 'anons.step.step'|trans|upper }} 1</p>
+                            <p>{{ 'anons.step.advertisement'|trans }}</p>
+                        </div>
+                        <div class="column">
+                            <div class="index">2</div>
+                            <p class="is-size-7">{{ 'anons.step.step'|trans|upper }} 2</p>
+                            <p>{{ 'anons.step.advert details'|trans }}</p>
+                        </div>
+                        <div class="column">
+                            <div class="index">3</div>
+                            <p class="is-size-7">{{ 'anons.step.step'|trans|upper }} 3</p>
+                            <p>{{ 'anons.step.add photos'|trans }}</p>
+                        </div>
+                        <div class="column">
+                            <div class="index">4</div>
+                            <p class="is-size-7">{{ 'anons.step.step'|trans|upper }} 4</p>
+                            <p>{{ 'anons.step.confirmation and payment'|trans }}</p>
+                        </div>
+                        <div class="column">
+                            <div class="index">5</div>
+                            <p class="is-size-7">{{ 'anons.step.step'|trans|upper }} 5</p>
+                            <p>{{ 'anons.step.conclusion'|trans }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <h1 class="is-size-4 has-text-centered">1. {{ 'anons.choose a category'|trans }}</h1>
+                    <br>
+                    <div class="buttons is-centered">
+                        <button class="button">{{ 'ladies'|trans|capitalize }}</button>
+                        <button class="button">{{ 'gentlemen'|trans|capitalize }}</button>
+                        <button class="button">{{ 'clubs and agencies'|trans|capitalize }}</button>
+                        <button class="button">{{ 'couples'|trans|capitalize }}</button>
+                        <button class="button">{{ 'massage'|trans|capitalize }}</button>
+                        <button class="button">{{ 'bdms'|trans|upper }}</button>
+                        <button class="button">{{ 'striptease'|trans|capitalize }}</button>
+                        <button class="button">{{ 'shows/Phone sex'|trans|capitalize }}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <h1 class="is-size-4 has-text-centered">2. {{ 'anons.advertisement - basic information'|trans }}</h1>
+                    <div class="box">
+                        <h1 class="is-size-5">{{ 'anons.basic information'|trans }}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

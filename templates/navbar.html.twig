@@ -75,8 +75,8 @@
             </div>
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary">
-                        <strong>{{ 'add advertisement'|trans|capitalize }}</strong>
+                    <a href="{{ path('app_product_add') }}" class="button is-primary">
+                        <strong>{{ 'anons.add advertisement'|trans|capitalize }}</strong>
                     </a>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <a href="{{ path('app_logout') }}" class="button is-light">
